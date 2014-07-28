@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.ucs.daggertest.app.services.Foo2Service;
 import com.ucs.daggertest.app.services.FooService;
 
 import javax.inject.Inject;
@@ -17,6 +18,7 @@ public class BlankFragment extends Fragment {
 
     @Inject
     FooService fooService;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

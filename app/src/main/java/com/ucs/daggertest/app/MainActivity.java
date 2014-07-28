@@ -2,11 +2,19 @@ package com.ucs.daggertest.app;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.ucs.daggertest.app.services.Foo2Service;
+
+import javax.inject.Inject;
 
 
 public class MainActivity extends ActionBarActivity {
+
+
+    @Inject
+    Foo2Service foo2Service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +26,12 @@ public class MainActivity extends ActionBarActivity {
                     .commit();
 
         }
+
+
+        MyApp myApp = (MyApp)getApplication();
+        myApp.injectToObjectGraph(this);
+
+        Log.i("inject", foo2Service.bar2());
     }
 
 

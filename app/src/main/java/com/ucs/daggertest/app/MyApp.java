@@ -1,10 +1,12 @@
 package com.ucs.daggertest.app;
 
 import android.app.Application;
+import com.ucs.daggertest.app.modules.Foo2Module;
 import com.ucs.daggertest.app.modules.FooModule;
 import com.ucs.daggertest.app.modules.MockFooModule;
 import dagger.ObjectGraph;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        objectGraph = ObjectGraph.create(TEST_BUILD ? new MockFooModule() : new FooModule());
+        objectGraph = ObjectGraph.create((TEST_BUILD ? new MockFooModule() : new FooModule()), new Foo2Module());
     }
 
     public void injectToObjectGraph(Object object) {
