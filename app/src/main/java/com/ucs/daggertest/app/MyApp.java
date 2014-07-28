@@ -18,14 +18,7 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        objectGraph = ObjectGraph.create(getModules().toArray());
-    }
-
-
-    protected List<Object> getModules() {
-        return Arrays.asList(
-                (Object) (TEST_BUILD ? new MockFooModule() : new FooModule())
-        );
+        objectGraph = ObjectGraph.create(TEST_BUILD ? new MockFooModule() : new FooModule());
     }
 
     public void injectToObjectGraph(Object object) {
