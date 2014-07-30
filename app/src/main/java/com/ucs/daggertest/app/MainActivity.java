@@ -19,6 +19,10 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MyApp myApp = (MyApp)getApplication();
+        myApp.injectToObjectGraph(this);
+
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -26,10 +30,6 @@ public class MainActivity extends ActionBarActivity {
                     .commit();
 
         }
-
-
-        MyApp myApp = (MyApp)getApplication();
-        myApp.injectToObjectGraph(this);
 
         Log.i("inject", foo2Service.bar2());
     }
