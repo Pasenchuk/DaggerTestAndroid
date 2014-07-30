@@ -12,8 +12,12 @@ import javax.inject.Singleton;
  * Created by Pasenchuk Victor on 28.07.14 in IntelliJ Idea
  */
 
-@Module(injects = BlankFragment.class)
-public class MockFooModule {
+@Module(
+        complete = false,
+        library = true,
+        overrides = true
+)
+public class MockAppModule {
     @Provides
     @Singleton
     FooService provideFooService() {

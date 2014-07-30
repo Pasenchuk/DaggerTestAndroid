@@ -1,26 +1,20 @@
 package com.ucs.daggertest.app;
 
 import android.app.Application;
-import com.ucs.daggertest.app.modules.Foo2Module;
-import com.ucs.daggertest.app.modules.FooModule;
-import com.ucs.daggertest.app.modules.MockFooModule;
+import com.ucs.daggertest.app.modules.AppModule;
+import com.ucs.daggertest.app.modules.MockAppModule;
 import dagger.ObjectGraph;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Pasenchuk Victor on 28.07.14 in IntelliJ Idea
  */
 public class MyApp extends Application {
     private ObjectGraph objectGraph;
-    private static final boolean TEST_BUILD = true;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        objectGraph = ObjectGraph.create((TEST_BUILD ? new MockFooModule() : new FooModule()), new Foo2Module());
+        objectGraph = ObjectGraph.create(new MockAppModule(), new AppModule());
     }
 
     public void injectToObjectGraph(Object object) {
