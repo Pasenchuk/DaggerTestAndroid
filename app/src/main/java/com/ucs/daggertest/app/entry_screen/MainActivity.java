@@ -1,11 +1,13 @@
-package com.ucs.daggertest.app;
+package com.ucs.daggertest.app.entry_screen;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.ucs.daggertest.app.services.Foo2Service;
+import com.ucs.daggertest.app.MyApp;
+import com.ucs.daggertest.app.R;
+import com.ucs.daggertest.app.services.foo2service.Foo2Service;
 
 import javax.inject.Inject;
 

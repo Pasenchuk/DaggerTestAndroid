@@ -1,8 +1,7 @@
 package com.ucs.daggertest.app.modules;
 
-import com.ucs.daggertest.app.BlankFragment;
-import com.ucs.daggertest.app.services.FooService;
-import com.ucs.daggertest.app.services.MockService;
+import com.ucs.daggertest.app.services.foo_service.FooService;
+import com.ucs.daggertest.app.services.foo_service.MockService;
 import dagger.Module;
 import dagger.Provides;
 

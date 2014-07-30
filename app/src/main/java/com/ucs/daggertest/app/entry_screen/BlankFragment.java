@@ -1,4 +1,4 @@
-package com.ucs.daggertest.app;
+package com.ucs.daggertest.app.entry_screen;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.ucs.daggertest.app.services.FooService;
+import com.ucs.daggertest.app.MyApp;
+import com.ucs.daggertest.app.R;
+import com.ucs.daggertest.app.services.foo_service.FooService;
 
 import javax.inject.Inject;
 

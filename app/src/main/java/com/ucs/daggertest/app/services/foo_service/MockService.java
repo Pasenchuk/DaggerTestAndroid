@@ -1,4 +1,4 @@
-package com.ucs.daggertest.app.services;
+package com.ucs.daggertest.app.services.foo_service;
 
 /**
  * Created by Pasenchuk Victor on 28.07.14 in IntelliJ Idea
